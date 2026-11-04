@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#264b40">
-  <meta name="description" content="2026年11月6–8日，从深圳北出发的两人顺德周末攻略。含清晖园、大良老城、顺峰山、实景地图、小红书笔记和性价比住宿；周末10点出发。">
+  <meta name="description" content="2026年11月6–8日，从深圳北出发的两人顺德周末攻略。含清晖园、大良老城、顺峰山、写实视觉导览、实景地图、具体门店点单与食客体验；周末10点出发。">
   <meta property="og:title" content="去顺德，过一个有滋有味的周末。">
   <meta property="og:description" content="11.06—11.08 · 深圳北出发 · 两人两晚 · 大良老城慢慢逛吃">
   <title>去顺德，过一个有滋有味的周末。｜11.6—11.8</title>
@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="revision.css">
+  <link rel="stylesheet" href="food-guide.css">
   <script src="assets/vendor/leaflet/leaflet.js" defer></script>
-  <script src="data.js" defer></script><script src="core.js" defer></script><script src="map.js" defer></script><script src="app.js" defer></script>
+  <script src="data.js" defer></script><script src="core.js" defer></script><script src="map.js" defer></script><script src="food-guide.js" defer></script><script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#itinerary">跳到每日行程</a>
@@ -50,7 +51,12 @@
     </section>
 
     <section id="route" class="section wrap">
-      <div class="section-heading"><div><p class="eyebrow">01 / FIND YOUR WAY</p><h2>这一趟，<span class="serif">这样走。</span></h2></div><p>大良是落脚点。园林、老街和好吃的，都围着它展开。</p></div>
+      <div class="section-heading"><div><p class="eyebrow">01 / FIND YOUR WAY</p><h2>这一趟，<span class="serif">这样走。</span></h2></div><p>先看导览，把周末放进一张图；再用下方实景地图查看位置。</p></div>
+      <figure id="visualGuide" class="visual-guide">
+        <div class="visual-guide-top"><span>SHUNDE / WEEKEND FIELD GUIDE</span><a href="assets/guide/shunde-visual-guide-v3.png" target="_blank" rel="noopener noreferrer" aria-label="打开顺德视觉导览原尺寸图片，可放大查看">放大看导览 ↗</a></div>
+        <a class="visual-guide-image-link" href="assets/guide/shunde-visual-guide-v3.png" target="_blank" rel="noopener noreferrer"><img src="assets/guide/shunde-visual-guide-v3.webp" width="1672" height="941" alt="顺德视觉导览：周六清晖园、华盖路与金榜街；周日顺峰山公园或容桂江岸，写实风格AI摄影拼贴" loading="lazy" decoding="async"></a>
+        <figcaption><div><strong>周六老城慢逛，周日公园或江岸。</strong><small>AI 创作 · 非导航地图。依据参考实拍重构，容桂江岸为艺术场景；不是现场照片。下方卫星／街道地图可查看真实位置。</small></div><a href="#sources">图像来源与署名 ↗</a></figcaption>
+      </figure>
       <div class="route-layout">
         <div class="route-map-card">
           <div class="map-topline"><span>顺德周末 · 实景游玩导览</span><span class="map-badge">卫星实景 / 街道地图</span></div>
@@ -93,10 +99,10 @@
     </section>
 
     <section id="food" class="section food-section"><div class="wrap">
-      <div class="section-heading"><div><p class="eyebrow">04 / ALWAYS ROOM FOR ONE MORE BITE</p><h2>把胃口，<span class="serif">留给顺德。</span></h2></div><p>两个人点小份，正餐留余地。这里按顺路安排，不编造评分榜。</p></div>
+      <div class="section-heading"><div><p class="eyebrow">04 / ALWAYS ROOM FOR ONE MORE BITE</p><h2>把胃口，<span class="serif">留给顺德。</span></h2></div><p>吃什么、怎么点、会是什么口感。把每家店的体验看清楚，再留一顿饭给它。</p></div>
       <div class="food-toolbar"><div class="filter-group" id="foodFilters" role="group" aria-label="筛选美食类别"></div><span class="food-disclaimer">两人点单参考 · 菜单以现场为准</span></div>
       <div id="foodGrid" class="food-grid"></div>
-      <p class="section-note">图片仅使用对应菜品的真实实拍。小红书给出查店线索，营业时间、等位、分店与菜单请出发前确认。</p>
+      <p class="section-note">点击“点单与体验”，查看两人点单、口味环境、顺路安排与食客原文。食物照片仅用真实实拍；没有匹配照片的店使用文字封面。</p>
     </div></section>
 
     <section id="stay" class="section wrap">
@@ -114,11 +120,12 @@
 
     <section id="checklist" class="section checklist-section"><div class="wrap checklist-layout"><div><p class="eyebrow">07 / BEFORE YOU GO</p><h2>出发前，<span class="serif">再看一眼。</span></h2><p>勾选记录保存在当前浏览器，换设备需要重新勾选。</p><div class="check-progress" id="checkProgress" aria-live="polite">0 / 6 已准备</div><a class="text-link" href="https://www.weather.com.cn/weather/101280800.shtml" target="_blank" rel="noopener noreferrer">出发前看佛山天气 ↗</a><p class="weather-note">未填报未经核实的11/6–11/8逐日天气；晴天选湖边，下雨选室内。</p></div><div id="checklistItems" class="checklist-items"></div></div></section>
 
-    <section class="section wrap sources-section" id="sources"><details><summary><span><span class="eyebrow">SOURCES & FIELD NOTES</span><strong>查证来源与图片署名</strong></span><span class="source-date">核对于 2026.11.04 ＋</span></summary><p>开放、票务、交通以官方信息优先；酒店与餐饮未取得指定日期实时报价。步行、打车耗时和点单参考为规划估算。实拍与卫星影像均可能为历史记录，不代表出发日景观、天气或人流。</p><div id="sourceList" class="source-list"></div><div class="photo-credits"><h3>摄影与图像</h3><p>清晖园两张实拍：EditQ，CC BY-SA 4.0；顺峰山牌坊：Nissangeniss，CC BY-SA 4.0。华盖路街景与民信双皮奶实拍：Lau Hau Yatyue Tiger，CC0，2024年1月拍摄。图片等比例压缩，页面展示可能裁切；导览图使用Esri卫星影像与OpenStreetMap街道底图，来源署名保留在地图内。</p><p><a href="https://commons.wikimedia.org/wiki/File:Qinghui_Garden_4.jpg" target="_blank" rel="noopener noreferrer">清晖园园景原图 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:Qinghui_Garden_10.jpg" target="_blank" rel="noopener noreferrer">清晖园庭院原图 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:Shunfengshan_Park_Main_Gate_202006.jpg" target="_blank" rel="noopener noreferrer">顺峰山牌坊原图 ↗</a> · <a href="https://commons.wikimedia.org/w/index.php?curid=144488455" target="_blank" rel="noopener noreferrer">华盖路实拍 ↗</a> · <a href="https://commons.wikimedia.org/w/index.php?curid=144487212" target="_blank" rel="noopener noreferrer">双皮奶实拍 ↗</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0 许可 ↗</a></p></div></details></section>
+    <section class="section wrap sources-section" id="sources"><details><summary><span><span class="eyebrow">SOURCES & FIELD NOTES</span><strong>查证来源与图片署名</strong></span><span class="source-date">核对于 2026.11.04 ＋</span></summary><p>开放、票务、交通以官方信息优先；酒店与餐饮未取得指定日期实时报价。步行、打车耗时和点单参考为规划估算。实拍与卫星影像均可能为历史记录，不代表出发日景观、天气或人流。</p><div id="sourceList" class="source-list"></div><div class="photo-credits"><h3>摄影与图像</h3><p>新增视觉导览为 AI 创作的写实摄影拼贴，非导航地图、非现场实拍。参考 EditQ 的清晖园、Nissangeniss 的顺峰山（CC BY-SA 4.0）及 Lau Hau Yatyue Tiger 的华盖路照片（CC0）重构；容桂江岸为生成的艺术场景。该参考衍生图按 CC BY-SA 4.0 提供。<a href="assets/guide/provenance-v3.json" target="_blank" rel="noopener noreferrer">完整提示词、参考照片与生成记录 ↗</a></p><p>清晖园两张实拍：EditQ，CC BY-SA 4.0；顺峰山牌坊：Nissangeniss，CC BY-SA 4.0。华盖路街景与民信双皮奶实拍：Lau Hau Yatyue Tiger，CC0，2024年1月拍摄。图片等比例压缩，页面展示可能裁切；实景定位图使用Esri卫星影像与OpenStreetMap街道底图，来源署名保留在地图内。</p><p><a href="https://commons.wikimedia.org/wiki/File:Qinghui_Garden_4.jpg" target="_blank" rel="noopener noreferrer">清晖园园景原图 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:Qinghui_Garden_10.jpg" target="_blank" rel="noopener noreferrer">清晖园庭院原图 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:Shunfengshan_Park_Main_Gate_202006.jpg" target="_blank" rel="noopener noreferrer">顺峰山牌坊原图 ↗</a> · <a href="https://commons.wikimedia.org/w/index.php?curid=144488455" target="_blank" rel="noopener noreferrer">华盖路实拍 ↗</a> · <a href="https://commons.wikimedia.org/w/index.php?curid=144487212" target="_blank" rel="noopener noreferrer">双皮奶实拍 ↗</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0 许可 ↗</a></p></div></details></section>
   </main>
   <footer class="site-footer"><div class="wrap footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-seal">順</span><span>好好吃，慢慢逛。<span class="brand-sub">SHUNDE / NOVEMBER 2026</span></span></a><p>愿这个周末，走得舒服，也吃得满足。</p><div><button class="text-link" data-action="download">下载文字行程 ↓</button><button class="text-link" data-action="print">打印 / 存为 PDF ↗</button><a class="text-link" href="https://github.com/zhongzihang/2026_ShunDe_Travel" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
   <nav class="mobile-nav" aria-label="手机快捷导航"><a href="#route">⌖<span>地图</span></a><a href="#itinerary">☷<span>行程</span></a><a href="#food">♧<span>美食</span></a><a href="#stay">⌂<span>住宿</span></a><button data-action="download">↓<span>存下</span></button></nav>
   <dialog id="placeDialog" aria-labelledby="dialogTitle"><div class="dialog-top"><span>SHUNDE / PLACE NOTES</span><button id="dialogClose" aria-label="关闭景点详情">关闭 ×</button></div><div id="dialogContent"></div></dialog>
+  <dialog id="foodDialog" aria-labelledby="foodDialogTitle"><div class="dialog-top"><span>SHUNDE / TASTE NOTES</span><button id="foodDialogClose" type="button" aria-label="关闭美食详情">关闭 ×</button></div><div id="foodDialogContent"></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <noscript><div class="wrap"><h2>三日行程</h2><p>11月6日晚按自选交通抵达入住。11月7日10:00出门，清晖园→华盖路→金榜街。11月8日10:00出门，顺峰山或博物馆或容桂三选一，午饭后取行李，按自选交通返深。请启用JavaScript查看实景地图和详细行程。</p></div></noscript>
 </body>

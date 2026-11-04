@@ -1,0 +1,88 @@
+{
+  "version": "v3",
+  "created_local_date": "2026-11-04",
+  "purpose": "Shunde weekend website editorial visual guide",
+  "mode": "built-in image_gen tool; reference-based new generation",
+  "tool": "image_gen.imagegen",
+  "use_case": "photorealistic-natural",
+  "original_preserved": true,
+  "requested_dimensions": "2048x1152 or wider, landscape 16:9",
+  "actual_dimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "selected_variant": "first generation; no revisions required",
+  "output_files": [
+    {
+      "path": "assets/guide/shunde-visual-guide-v3.png",
+      "format": "PNG",
+      "bytes": 3182162,
+      "sha256": "0347e33d798207a5703a43f08fcf019e59720ade2032f8c0146566e62163576c",
+      "role": "Unmodified generated master, copied from built-in tool output"
+    },
+    {
+      "path": "assets/guide/shunde-visual-guide-v3.webp",
+      "format": "WebP",
+      "bytes": 441802,
+      "sha256": "5d12746f16beacbc04e5d2414a10708872ae97ee0e22ae5d2393a9da785263c3",
+      "role": "Website asset",
+      "compression": {
+        "quality": 88,
+        "method": 6,
+        "resizing": false,
+        "pixels_or_text_changed": false
+      }
+    }
+  ],
+  "final_prompt": "Use case: photorealistic-natural.\nAsset type: a finished high-resolution landscape editorial travel visual for a real Shunde weekend guide website, 2048 × 1152 or wider, 16:9 horizontal composition, full canvas without mockup frame.\nPrimary request: create an elegant premium travel-magazine visual guide of Shunde, using natural photographic collage on warm ivory paper, deep Lingnan green and restrained brick-red accents. This is an artistic visual orientation board, not a navigable map. Photorealistic scenery and faithful architecture, never cartoon, icon map, isometric illustration or toy diorama.\nInput images: Image 1 is an architectural appearance reference for Qinghui Garden grey brick garden gate, tiled roof, trees and octagonal window; Image 2 is an appearance reference for Huagai Road's real green arcade columns and pale historic façades; Image 3 is an appearance reference for Shunfengshan Park's monumental three-arched grey stone paifang with layered terracotta roofs, green hills and blue sky. All three are reference images only, not edit targets. Recompose freely into a coherent editorial collage while preserving the distinctive real architecture and photographic textures. Do not copy timestamps, people close-ups, shop names, logos or signage.\nScene and composition: a spacious editorial layout with generous ivory negative space and 4 photographic place vignettes, organic clean cut-paper photo edges and fine green index lines. Top left is the Qinghui Garden garden-gate view in a lush realistic garden setting, immediately beside it in the upper-left/upper-middle cluster is the Huagai Road covered arcade, white façades and green columns; this cluster expresses the connected Daliang old-town Saturday route. The Shunfengshan monumental park arch is the largest lower-right/middle-right landscape vignette, clearly southeast of the old-town cluster. A quieter real-feeling Ronggui riverside promenade, broad Pearl River Delta water, trees and low skyline occupies the bottom/south of the page as a separate option, with no invented landmark tower, bridge or named shop. Sunday park versus riverside are two alternatives, not a forced route joining all four. Do not draw roads, arrows resembling routing, scale bars, map pins, geographic borders, travel times, compass or satellite imagery. A few delicate thin editorial index rules and small 01 02 03 04 numerals are welcome. Leave breathing room between scenes. Title at upper-left or top edge with strong beautiful dark-green Chinese serif typography; place labels in crisp legible Chinese, magazine quality. Photographic afternoon daylight, natural slightly muted greens, warm limestone and grey brick, accurate believable scale and texture, no extreme HDR.\nText (verbatim; only these Chinese text strings, each once, with no added sentences):\n\"顺德，慢慢逛\"\n\"清晖园\"\n\"华盖路 · 金榜街\"\n\"顺峰山公园\"\n\"容桂江岸\"\n\"周六 · 大良老城\"\n\"周日 · 公园或江岸\"\nTypography: exact simplified Chinese glyphs, clean alignment, clear labels near the corresponding scenery; make the Saturday grouping label near the upper old-town cluster and Sunday grouping label between the separate park and riverside alternatives. No additional English text. No fabricated Chinese architectural inscriptions: keep existing plaques very small or omit detail.\nConstraints: realistic architectural and garden photography collage, not an illustration. No food, restaurant interiors, fabricated store fronts, people portraits, prices, transport, trains, schedules, QR codes, watermarks, logos, decorative stickers or fake navigation. No photographic border around the entire artwork. Render a polished complete editorial image with all seven required Chinese strings correct and no overflow.",
+  "reference_photos": [
+    {
+      "path": "assets/qinghui-detail.webp",
+      "role": "Architectural appearance reference; not an edit target",
+      "title": "Qinghui Garden 10.jpg",
+      "author": "EditQ",
+      "source": "https://commons.wikimedia.org/wiki/File:Qinghui_Garden_10.jpg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "path": "assets/photos-v2/huagai-road.webp",
+      "role": "Arcade architecture and green column appearance reference; not an edit target",
+      "title": "GD 廣東 Guangdong 佛山 Foshan 順德 Shunde 華蓋路 Huagai Road 步行街 Pedestrian Street January 2024 R12S 01.jpg",
+      "author": "Lau Hau Yatyue Tiger",
+      "source": "https://commons.wikimedia.org/w/index.php?curid=144488455",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "path": "assets/shunfeng.webp",
+      "role": "Monumental park arch and landscape appearance reference; not an edit target",
+      "title": "Shunfengshan Park Main Gate 202006.jpg",
+      "author": "Nissangeniss",
+      "source": "https://commons.wikimedia.org/wiki/File:Shunfengshan_Park_Main_Gate_202006.jpg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  ],
+  "attribution_for_web": "AI 创作视觉导览；建筑外观参考 EditQ《Qinghui Garden 10.jpg》与 Nissangeniss《Shunfengshan Park Main Gate 202006.jpg》（CC BY-SA 4.0）、Lau Hau Yatyue Tiger 华盖路实拍（CC0），均来自 Wikimedia Commons。",
+  "reuse_license": "CC BY-SA 4.0 for this reference-derived generated collage; source photo credits must accompany reuse.",
+  "verified_text": [
+    "顺德，慢慢逛",
+    "清晖园",
+    "华盖路 · 金榜街",
+    "顺峰山公园",
+    "容桂江岸",
+    "周六 · 大良老城",
+    "周日 · 公园或江岸"
+  ],
+  "qa": {
+    "visual_inspection": "Passed by viewing generated output; all seven required Chinese strings legible and correct.",
+    "composition": "Qinghui and Huagai old town upper-left cluster; Shunfengshan park middle/right; Ronggui riverside at bottom/south.",
+    "style": "Natural photographic collage on ivory paper with deep green and restrained brick red; no cartoon.",
+    "limits": "The Ronggui waterfront vignette is AI-created scenery, not a verified photograph of a particular exact waterfront segment. Other architectural scenes are AI-reconstructed from the credited photographic references, not documentary photographs.",
+    "navigation_boundary": "Artistic visual guide only. Not a geographic map, not to scale, no roads or travel-time claims; webpage must label AI创作 · 非导航地图 and retain the separate real interactive map.",
+    "no_times_prices_trains_logo_qr_watermark": true,
+    "source_pixel_dimensions_verified": true,
+    "compressed_file_reopened": true
+  }
+}

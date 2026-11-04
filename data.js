@@ -1,5 +1,4 @@
-(function(root){
-const trip={
+(function(root){const data={
   "sources": [
     {
       "id": "qinghui",
@@ -102,6 +101,66 @@ const trip={
       "title": "Esri · World Imagery卫星实景底图",
       "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
       "note": "卫星影像为历史影像，拍摄日期随区域变化；地图下方保留底图署名。"
+    },
+    {
+      "id": "wsj-milk-2026",
+      "title": "蜗食记 · 客家妹妹 · 顺德华盖路甜品4家实测",
+      "url": "https://www.woshiji.cn/show-20-5474-1.html",
+      "note": "2026-02-26发布，署名个人试吃。补充民信和仁信的甜度、奶味与姜味意见。不能据单个作者宣称店铺普遍不好。"
+    },
+    {
+      "id": "ctrip-dongge-2020",
+      "title": "携程游记 · 东哥到处走 · 顺德三日，你猜我吃了几顿饭？",
+      "url": "https://gs.ctrip.com/html5/you/travels/207/3958412.html",
+      "note": "2020-07-14发布，历史个人游记。仁信与金榜欢记的历史口味、空间和售罄反馈，必须显示2020年。"
+    },
+    {
+      "id": "smzdm-xiaoxiao-2018",
+      "title": "什么值得买 · 潇潇（原文署名，账号：极简旅行） · 顺德 | 值得专程去吃的美食之都，一天八顿都去哪儿吃？",
+      "url": "https://post.smzdm.com/p/725802/",
+      "note": "2018-07-06发布，历史个人游记。少量概括民信、顺德人家与毋米粥的历史体验。旧价格、营业和服务模式都不能写成当前承诺。"
+    },
+    {
+      "id": "trip-zhubelly-2020",
+      "title": "Trip Moments · zbz1129 · 佛山了能私房菜",
+      "url": "https://hk.trip.com/moments/detail/foshan-207-8264506/",
+      "note": "2020-07-12发布，历史个人体验。农家乐式环境和作者喜欢的河鱼、椒盐豆腐、清远鸡，仅作历史主观反馈。"
+    },
+    {
+      "id": "trip-leneng-2021",
+      "title": "Trip.com餐厅点评 · 睿纾 · 𠮩𠹌私房菜（近良店）用户点评",
+      "url": "https://hk.trip.com/restaurant/china/foshan/detail/ngai-ngan-private-cuisine-11641292/",
+      "note": "2021-01-13发布，历史具名游客点评。该次点评称点菜看门口图示，上菜快，喜欢烧鹅、家乡鱼饼等，分量可；并非实时服务承诺。"
+    },
+    {
+      "id": "ctrip-wumizhou-2023",
+      "title": "携程餐厅点评 · YoYo_4Y5K7U0D · 太艮堡毋米粥（锦龙路总店）用户点评",
+      "url": "https://you.ctrip.com/food/shanghai207/5490133-dianping.html",
+      "note": "2023-07-15发布，历史具名游客点评。该次海鲜和粥底评价较好，蔬菜选择和品质评价差。不能把该次无等位当实时结论。"
+    },
+    {
+      "id": "sdlib-tea-2024",
+      "title": "顺德图书馆（信息来源：顺德发布） · 顺德发布 · 用美味唤醒一座城！顺德人私藏的「早茶寻味地图」",
+      "url": "https://www.sdlib.com.cn/home/sdms/detail/id/121732.html",
+      "note": "2024-05-08发布，官方餐饮介绍。支持顺德人家虾饺皇、绿茶红豆薄撑、XO酱陈村粉等招牌菜，不是游客试吃。"
+    },
+    {
+      "id": "minxin-location",
+      "title": "去哪儿 · 民信华盖路店门牌与菜品",
+      "url": "https://touch.travel.qunar.com/poi/3185169",
+      "note": "用于核对具体门店与菜品，未作本周末在营和实时等位承诺。"
+    },
+    {
+      "id": "wumizhou-location",
+      "title": "Trip.com · 毋米粥锦龙路总店资料",
+      "url": "https://tw.trip.com/restaurant/china/foshan/detail/tai-gen-bao-wu-mi-zhouzhou-di-huo-guo-11641062/",
+      "note": "核对锦龙路270号、品牌别名与菜品线索；旧营业时刻冲突，未采用。"
+    },
+    {
+      "id": "shunderenjia-location",
+      "title": "顺德图书馆 · 顺德人家食府门店",
+      "url": "https://www.sdlib.com.cn/home/sdms/mscymdxqy/id/110977.html",
+      "note": "核对太艮路11号黄金商业广场2层；供应与茶位另行确认。"
     }
   ],
   "places": [
@@ -337,90 +396,375 @@ const trip={
   "foods": [
     {
       "id": "tea",
-      "name": "早午茶：睡饱后再吃",
+      "name": "顺德人家食府（黄金广场店）",
+      "shopName": "顺德人家食府",
+      "branch": "黄金广场店 · 把早茶当一顿饭",
       "category": "早茶",
-      "area": "大良老城",
-      "dish": "虾饺 / 烧卖 / 排骨 / 陈村粉",
-      "description": "不用为了早茶八点起床。周日10点出门后再吃茶点；周六先逛清晖园，午饭也可选茶楼，3–4笼点心加一份粉，两人分享。",
-      "candidate": "酒店附近茶楼优先，先确认是否仍供应茶点。華叔茶記可作老城简餐候选，店名相同不等于同一门牌，营业与地址临行核对。",
-      "sources": [
-        "food",
-        "xhs-route",
-        "xhs-tea-check"
+      "area": "大良太艮路",
+      "address": "大良太艮路11号黄金商业广场2层",
+      "coverWord": "早茶",
+      "dish": "虾饺皇 / XO酱陈村粉 / 豉汁凤爪或蒸排骨 / 绿茶红豆薄撑",
+      "description": "10点出门也能把早茶当早午餐，先问茶位，再点少量茶点。",
+      "cardSummary": "10点出门也能把早茶当早午餐，先问茶位，再点少量茶点。",
+      "order": [
+        {
+          "name": "虾饺皇",
+          "note": "先点一笼，问清每笼件数，趁热分着吃。"
+        },
+        {
+          "name": "XO酱陈村粉",
+          "note": "点一份作主食，酱香与薄滑口感适合搭清茶。"
+        },
+        {
+          "name": "凤爪或排骨",
+          "note": "两款先选一款，避免点心加粉过量。"
+        },
+        {
+          "name": "绿茶红豆薄撑",
+          "note": "还有胃口、又想吃甜口时再加；本次不必与双皮奶都点。"
+        }
       ],
-      "priceHint": "两人 ¥70–110"
+      "flavor": "虾饺偏鲜甜，陈村粉薄滑；薄撑可作甜口加点。两人先吃咸口，再决定是否加甜点。",
+      "environment": "传统大型广式茶楼，有大厅和不同厅房。历史游客提醒不同区域茶位收费有差异，到店先问当前茶位和最低消费。",
+      "waiting": "周日10点出门不承诺免排队；先确认茶点仍供应和可接受的等位，再决定是否入座。",
+      "twoPeople": "先点虾饺、凤爪或排骨、1份陈村粉，共3样；还饿再加粥或甜点。先问每笼件数、当前茶位、是否仍供应茶点。",
+      "goodFor": "想吃广式茶点、愿意先问茶位和份量的两个人。",
+      "routeLabel": "周日午饭候选 · 需确认茶点供应",
+      "routeFit": "可在顺峰山后作为午饭候选，先确认中午仍供应茶点及接驳距离；若等位影响取行李，就选返程方向的简餐。不要把喝茶硬塞进10点出门后的公园前。",
+      "placeId": "shunfeng",
+      "experienceBasis": "点单份量与顺路安排为本次规划建议。环境和食客意见保留原文年份，不代表2026年11月现场实测。",
+      "candidate": "门牌用于识别具体分店；出发前确认当日营业、茶位或收费、菜单和供应。",
+      "reviews": [
+        {
+          "sourceId": "smzdm-xiaoxiao-2018",
+          "kind": "personal",
+          "source": "什么值得买",
+          "author": "潇潇（账号：极简旅行）",
+          "date": "2018-07-06",
+          "title": "历史个人游记 · 2018",
+          "summary": "喜欢陈村粉与薄撑等出品，也记录不同厅茶位费差异导致结账意外；应先问收费，不能沿用2018价格。",
+          "url": "https://post.smzdm.com/p/725802/"
+        }
+      ],
+      "sources": [
+        "sdlib-tea-2024",
+        "shunderenjia-location",
+        "smzdm-xiaoxiao-2018"
+      ]
     },
     {
       "id": "milk",
-      "name": "双皮奶：先吃原味",
+      "name": "民信老铺（华盖路店）",
+      "shopName": "民信老铺",
+      "branch": "华盖路店 · 与仁信二选一",
       "category": "甜品",
-      "area": "华盖路 / 金榜街",
-      "dish": "原味双皮奶 / 姜撞奶 / 水牛奶",
-      "description": "民信或仁信先选一家，原味两人分着试。个人游记提醒热门店常排队；不追着每家打卡，留时间给金榜街的另一种奶食。",
-      "candidate": "民信老铺、仁信老铺；金榜街店铺现场比菜单，不预设排行榜。",
-      "sources": [
-        "milk",
-        "food",
-        "xhs-weekend",
-        "xhs-route"
+      "area": "华盖路",
+      "address": "大良华盖路119号（携程/去哪儿常列115–119号）",
+      "coverWord": "奶香",
+      "dish": "原味双皮奶 / 姜撞奶",
+      "description": "清晖园后先分一碗原味双皮奶，把胃口留给下一站。",
+      "cardSummary": "清晖园后先分一碗原味双皮奶，把胃口留给下一站。",
+      "order": [
+        {
+          "name": "原味双皮奶",
+          "note": "先点一碗两人分食，冷热按个人喜好；糖度能否调整先问。"
+        },
+        {
+          "name": "姜撞奶",
+          "note": "两人都喜欢姜味再加，和双皮奶不用一开始各点两份。"
+        }
       ],
-      "priceHint": "两人 ¥25–50",
+      "flavor": "2026年一位偏低糖作者觉得半糖也甜；先试原味与奶皮，再判断合不合口味，不用为了名气硬吃完。",
+      "environment": "华盖路骑楼步行街中的热门老铺。现有小红书游记提醒人多；不把它当安静久坐的唯一休息点。",
+      "waiting": "个人游记提到民信人多，但没有可用于本周末的实时分钟数；到店先看排队长度，等待超过可接受范围就换同街候选。",
+      "twoPeople": "先点1碗原味双皮奶分享；还想试第二款再加姜撞奶。怕甜先问当前是否可选糖度，民信与仁信本次只选一家。",
+      "goodFor": "第一次来想尝一碗经典奶食、能接受偏甜口的人。",
+      "routeLabel": "周六14:45 · 华盖路停一停",
+      "routeFit": "周六清晖园之后或华盖路散步时顺路停留；建议留20–40分钟，属于规划预留。",
+      "placeId": "huagai",
+      "experienceBasis": "点单份量与顺路安排为本次规划建议。环境和食客意见保留原文年份，不代表2026年11月现场实测。",
+      "candidate": "门牌用于识别具体分店；出发前确认当日营业、茶位或收费、菜单和供应。",
+      "reviews": [
+        {
+          "sourceId": "xhs-weekend",
+          "kind": "personal",
+          "source": "小红书",
+          "author": "黑松露肠粉",
+          "date": "2026-05-13",
+          "title": "个人游记",
+          "summary": "把民信双皮奶列为华盖路小吃，但强调热门店人多。",
+          "url": "https://www.xiaohongshu.com/explore/6a045f660000000036001a36"
+        },
+        {
+          "sourceId": "wsj-milk-2026",
+          "kind": "personal",
+          "source": "蜗食记",
+          "author": "客家妹妹",
+          "date": "2026-02-26",
+          "title": "个人口味：偏低糖",
+          "summary": "点半糖冻双皮奶，认为奶皮比仁信厚，但对其甜度和奶味评价保留；她自述偏好无糖或三分糖。",
+          "url": "https://www.woshiji.cn/show-20-5474-1.html"
+        }
+      ],
+      "sources": [
+        "minxin-location",
+        "wsj-milk-2026",
+        "xhs-weekend"
+      ],
       "image": "assets/photos-v2/double-skin-milk.webp",
       "alt": "顺德华盖路民信老店的一碗原味双皮奶，2024年1月实拍",
-      "photoCredit": "Lau Hau Yatyue Tiger / CC0"
+      "photoCredit": "Lau Hau Yatyue Tiger / CC0",
+      "photoCaption": "民信华盖路店原味双皮奶 · 2024年1月实拍"
+    },
+    {
+      "id": "renxin",
+      "name": "仁信老铺（华盖路店）",
+      "shopName": "仁信老铺",
+      "branch": "华盖路店 · 民信排队时的同街备选",
+      "category": "甜品",
+      "area": "华盖路",
+      "address": "大良华盖路93号",
+      "coverWord": "姜香",
+      "dish": "原味双皮奶 / 姜撞奶",
+      "description": "和民信二选一；想试姜撞奶时先确认能否接受明显姜味。",
+      "cardSummary": "和民信二选一；想试姜撞奶时先确认能否接受明显姜味。",
+      "order": [
+        {
+          "name": "原味双皮奶",
+          "note": "作为基础口味先试一碗，两人分食。"
+        },
+        {
+          "name": "姜撞奶",
+          "note": "姜香明显，不吃姜的人不用跟着热门点单。"
+        },
+        {
+          "name": "炸鲜奶",
+          "note": "历史游客认为偏油；已吃奶食时不必继续叠加。"
+        }
+      ],
+      "flavor": "有人喜欢顺滑与甜辣平衡，也有人觉得低糖仍甜、姜味突出；不吃姜就从原味双皮奶开始。",
+      "environment": "2020年游客写过高峰一座难求、店内嘈杂；这是历史体验，当前座位和服务流程以到店为准。",
+      "waiting": "到店先确认座位和点单方式；不把历史‘高峰难找座’换算为当前等位时长。",
+      "twoPeople": "一碗双皮奶起步；两人都吃姜才加一碗姜撞奶。已经在民信吃过就把此店留作替换，不再叠加两碗奶食。",
+      "goodFor": "喜欢奶香与姜香、愿意根据甜度和姜辣感选口味的人。",
+      "routeLabel": "周六华盖路 · 甜品二选一",
+      "routeFit": "周六华盖路时作民信备选；建议预留20–40分钟，属于规划建议。",
+      "placeId": "huagai",
+      "experienceBasis": "点单份量与顺路安排为本次规划建议。环境和食客意见保留原文年份，不代表2026年11月现场实测。",
+      "candidate": "门牌用于识别具体分店；出发前确认当日营业、茶位或收费、菜单和供应。",
+      "reviews": [
+        {
+          "sourceId": "ctrip-dongge-2020",
+          "kind": "personal",
+          "source": "携程游记",
+          "author": "东哥到处走",
+          "date": "2020-07-14",
+          "title": "历史个人游记 · 2020",
+          "summary": "喜欢双皮奶、姜撞奶；觉得炸鲜奶油腻、室内嘈杂，少了悠闲吃甜品的感觉。",
+          "url": "https://gs.ctrip.com/html5/you/travels/207/3958412.html"
+        },
+        {
+          "sourceId": "wsj-milk-2026",
+          "kind": "personal",
+          "source": "蜗食记",
+          "author": "客家妹妹",
+          "date": "2026-02-26",
+          "title": "个人口味：偏低糖",
+          "summary": "点过低糖冻双皮奶与热姜撞奶，认为奶皮偏薄、姜味辛辣突出；不吃姜的人慎选。",
+          "url": "https://www.woshiji.cn/show-20-5474-1.html"
+        }
+      ],
+      "sources": [
+        "wsj-milk-2026",
+        "ctrip-dongge-2020"
+      ]
+    },
+    {
+      "id": "huanji",
+      "name": "金榜欢记牛奶牛乳",
+      "shopName": "金榜欢记牛奶牛乳",
+      "branch": "金榜上街19号 · 一瓶奶的小停留",
+      "category": "甜品",
+      "area": "金榜上街",
+      "address": "大良金榜上街19号",
+      "coverWord": "牛乳",
+      "dish": "水牛奶 / 双皮奶 / 咸牛乳片",
+      "description": "金榜街小店喝一瓶水牛奶；咸牛乳片与甜双皮奶是不同东西。",
+      "cardSummary": "金榜街小店喝一瓶水牛奶；咸牛乳片与甜双皮奶是不同东西。",
+      "order": [
+        {
+          "name": "水牛奶",
+          "note": "先共享一瓶；想买回深圳，先问保存温度与可携带时间。"
+        },
+        {
+          "name": "双皮奶",
+          "note": "如果华盖路已吃过，本次跳过也完整。"
+        },
+        {
+          "name": "咸牛乳片",
+          "note": "先确认是咸口、怎么搭配，不按甜品一口接一口吃。"
+        }
+      ],
+      "flavor": "水牛奶和双皮奶属于奶香甜口；牛乳片是咸口奶制品，先问吃法，两者别当同一种甜点。",
+      "environment": "历史游记描述为小巷深处的小店，座位少，可能坐在外面或外带；不保证当前门店布置相同。",
+      "waiting": "旧游记记录临近打烊时凤凰奶糊售罄；若专程为了某一款，去之前先确认供应，不以旧文营业时刻安排。",
+      "twoPeople": "共享1瓶水牛奶起步；如果前面没有吃双皮奶再加1碗。买牛乳片先问是否咸口、保存温度和可常温携带多久。",
+      "goodFor": "更想尝水牛奶与传统牛乳片，愿意外带慢慢走的人。",
+      "routeLabel": "周六16:00 · 金榜街巷散步",
+      "routeFit": "周六莘村大街—金山大街—金榜上街散步中停留；建议留20–30分钟，属于规划预留。",
+      "placeId": "jinbang",
+      "experienceBasis": "点单份量与顺路安排为本次规划建议。环境和食客意见保留原文年份，不代表2026年11月现场实测。",
+      "candidate": "门牌用于识别具体分店；出发前确认当日营业、茶位或收费、菜单和供应。",
+      "reviews": [
+        {
+          "sourceId": "ctrip-dongge-2020",
+          "kind": "personal",
+          "source": "携程游记",
+          "author": "东哥到处走",
+          "date": "2020-07-14",
+          "title": "历史个人游记 · 2020",
+          "summary": "喜欢水牛奶和双皮奶；记录店小、常需外坐或外带，临近闭店时想吃的凤凰奶糊已售罄。",
+          "url": "https://gs.ctrip.com/html5/you/travels/207/3958412.html"
+        }
+      ],
+      "sources": [
+        "ctrip-dongge-2020"
+      ]
     },
     {
       "id": "cantonese",
-      "name": "顺德菜：两人也能吃好",
+      "name": "了能私房菜（近良店）",
+      "shopName": "了能私房菜",
+      "branch": "近良店 · 家常顺德菜",
       "category": "正餐",
-      "area": "老城周边",
-      "dish": "煎焗鱼 / 酿鲮鱼 / 菜心 / 一份主食",
-      "description": "周六午餐选一份鱼类主菜、一份蔬菜和主食。可搜大良的了能私房菜等候选，先看当日菜单、份量和等位。",
-      "candidate": "菜式搭配为规划建议；候选门店在营、价格与预约未实时核实。",
-      "sources": [
-        "food"
+      "area": "大良近良",
+      "address": "大良祥兴南路永乐巷11号（部分资料简写祥兴南路11号）",
+      "coverWord": "私房",
+      "dish": "招牌烧鹅 / 煎家乡鱼饼 / 客家豆腐 / 椒盐豆腐 / 猪肚汤",
+      "description": "烧鹅或鱼饼选一道，再搭豆腐与青菜，两人不必复制大桌菜单。",
+      "cardSummary": "烧鹅或鱼饼选一道，再搭豆腐与青菜，两人不必复制大桌菜单。",
+      "order": [
+        {
+          "name": "烧鹅或煎家乡鱼饼",
+          "note": "先选一道主菜，问能否点小例，再决定加哪道。"
+        },
+        {
+          "name": "客家豆腐或椒盐豆腐",
+          "note": "两种做法选一种，以当日菜单为准。"
+        },
+        {
+          "name": "时蔬与米饭",
+          "note": "配一份青菜和主食就能成一顿饭。"
+        },
+        {
+          "name": "猪肚汤",
+          "note": "先问是否有小例；若只有大煲，减少一道菜。"
+        }
       ],
-      "priceHint": "两人 ¥140–200"
+      "flavor": "家常鲜香路线；烧鹅、鱼饼都是值得查菜单的候选，两人不必把大桌招牌逐个复制。",
+      "environment": "2020年游客形容有农家乐的感觉；为朴素私房菜氛围，当前席面与包间状况没有实测。",
+      "waiting": "预约、等位、到店点菜流程未核实；周六午餐前确认门牌和接单，别仅按‘了能’模糊店名导航。",
+      "twoPeople": "先在烧鹅和家乡鱼饼中选1道，配1份豆腐、1份青菜和米饭；想喝猪肚汤先问小例，若只有大煲则减一道菜。",
+      "goodFor": "想吃一顿家常顺德菜、重视菜品多过安静精致环境的人。",
+      "routeLabel": "周六午餐候选 · 单独接驳",
+      "routeFit": "周六午餐可作顺德菜候选；近良片区需单独接驳，不写成清晖园门口的步行小店。建议留60–90分钟，属于规划预留。",
+      "placeId": "qinghui",
+      "experienceBasis": "点单份量与顺路安排为本次规划建议。环境和食客意见保留原文年份，不代表2026年11月现场实测。",
+      "candidate": "请核对近良店、永乐巷11号，别混成同名其他分店；预约、菜单与供应先确认。",
+      "reviews": [
+        {
+          "sourceId": "trip-zhubelly-2020",
+          "kind": "personal",
+          "source": "Trip Moments",
+          "author": "zbz1129",
+          "date": "2020-07-12",
+          "title": "历史个人体验 · 2020",
+          "summary": "觉得像农家乐，喜欢河鱼、椒盐豆腐和清远鸡。",
+          "url": "https://hk.trip.com/moments/detail/foshan-207-8264506/"
+        },
+        {
+          "sourceId": "trip-leneng-2021",
+          "kind": "personal",
+          "source": "Trip.com餐厅点评",
+          "author": "睿纾",
+          "date": "2021-01-13",
+          "title": "历史游客点评 · 2021",
+          "summary": "该次喜欢烧鹅、家乡鱼饼等，认为分量可、上菜快；服务速度是单次历史体验。",
+          "url": "https://hk.trip.com/restaurant/china/foshan/detail/ngai-ngan-private-cuisine-11641292/"
+        }
+      ],
+      "sources": [
+        "trip-zhubelly-2020",
+        "trip-leneng-2021"
+      ]
     },
     {
       "id": "porridge",
-      "name": "粥底火锅：留给晚餐",
+      "name": "大良毋米粥·粥水火锅（锦龙路总店）",
+      "shopName": "大良毋米粥",
+      "branch": "锦龙路总店 · 粥水火锅",
       "category": "正餐",
-      "area": "大良片区",
-      "dish": "粥底 / 鱼片 / 牛肉 / 时蔬",
-      "description": "周六18:00前后吃粥底火锅，白贝、肉丸、鱼片和蔬菜按两人份点，食材充分煮熟。热门店先问取号，等位太久就改附近顺德菜。",
-      "candidate": "小红书路线提到大良毋米粥锦龙路270号，可作为查店线索；先核对当前准确门店、晚市与取号。杏坛公平靓正等只选顺路分店。",
-      "sources": [
-        "food",
-        "xhs-route"
+      "area": "大良锦龙路",
+      "address": "大良锦龙路270号",
+      "coverWord": "粥底",
+      "dish": "粥水锅底 / 白贝、鱼片、肉滑中选两类 / 时蔬",
+      "description": "白贝、鱼片、肉滑少量分批点，最后留一点胃口喝粥。",
+      "cardSummary": "白贝、鱼片、肉滑少量分批点，最后留一点胃口喝粥。",
+      "order": [
+        {
+          "name": "粥水锅底",
+          "note": "先确认锅底、茶位与服务方式，不把历史代煮体验当承诺。"
+        },
+        {
+          "name": "白贝或鱼片",
+          "note": "海鲜先选一类小份；喜欢再加，食材充分煮熟。"
+        },
+        {
+          "name": "肉滑与时蔬",
+          "note": "各来一份，问清重量和能否半份，先看菜的鲜度。"
+        },
+        {
+          "name": "最后的粥",
+          "note": "给融合食材滋味的粥留一点胃口，不用另外堆很多主食。"
+        }
       ],
-      "priceHint": "两人 ¥150–220"
-    },
-    {
-      "id": "rice",
-      "name": "陈村粉与伦教糕",
-      "category": "小吃",
-      "area": "华盖路 / 老城",
-      "dish": "一份粉 / 小份糕 / 牛杂任选",
-      "description": "作为午后或周五晚的小食补充。伦教糕买小份先试，带走注意保鲜；无需单独跑陈村或伦教镇。",
-      "candidate": "欢姐等品牌可作为查店线索，优先选顺路门店，售卖以现场为准。",
-      "sources": [
-        "food"
+      "flavor": "米汤衬食材原味，整体较清淡；最后的粥比开锅时更有味。蔬菜到店看鲜度后再点。",
+      "environment": "2018年游记写总店陈设古朴、当次有人协助下锅；仅作历史体验，不承诺本次全程代煮。",
+      "waiting": "晚市是否可预约、如何取号与具体等多久均未实时核实；周六下午先确认，再决定18点左右前往。",
+      "twoPeople": "1个粥底，海鲜或鱼肉选1–2盘，再加1盘肉滑和1份菜；先问半份与重量，吃完再加，避免整鱼加多盘肉过量。食材充分煮熟。",
+      "goodFor": "喜欢食材原味、想坐下来慢慢吃热乎一餐的人。",
+      "routeLabel": "周六18:00 · 独立一顿晚餐",
+      "routeFit": "适合作周六独立晚餐，预留90分钟左右；锦龙路不是华盖路步行段，单独查接驳，均为规划建议。",
+      "placeId": "huagai",
+      "experienceBasis": "点单份量与顺路安排为本次规划建议。环境和食客意见保留原文年份，不代表2026年11月现场实测。",
+      "candidate": "公开条目也称“太艮堡毋米粥”，以锦龙路270号核对。晚市取号、菜单和供应需确认。",
+      "reviews": [
+        {
+          "sourceId": "smzdm-xiaoxiao-2018",
+          "kind": "personal",
+          "source": "什么值得买",
+          "author": "潇潇（账号：极简旅行）",
+          "date": "2018-07-06",
+          "title": "历史个人游记 · 2018",
+          "summary": "写到鱼片与椒盐鱼骨的一鱼两吃，粥底细滑，店内陈设古朴；是2018年到店体验。",
+          "url": "https://post.smzdm.com/p/725802/"
+        },
+        {
+          "sourceId": "ctrip-wumizhou-2023",
+          "kind": "personal",
+          "source": "携程餐厅点评",
+          "author": "YoYo_4Y5K7U0D",
+          "date": "2023-07-15",
+          "title": "历史游客点评 · 2023",
+          "summary": "该次认为海鲜新鲜、粥底稠，但蔬菜选择少且偏老；提醒到店看菜，而非照着攻略全点。",
+          "url": "https://you.ctrip.com/food/shanghai207/5490133-dianping.html"
+        }
       ],
-      "priceHint": "两人 ¥25–50"
-    },
-    {
-      "id": "souvenir",
-      "name": "手信：少而顺路",
-      "category": "小吃",
-      "area": "大良老城",
-      "dish": "蹦砂 / 杏仁饼 / 小份糕点",
-      "description": "周日午饭后买一点便于携带的手信。奶制品不适合长时间常温携带，先问保存要求。",
-      "candidate": "只在返程取行李前顺路购买；没有必须打卡的指定店。",
       "sources": [
-        "food"
-      ],
-      "priceHint": "自选 ¥30–80"
+        "wumizhou-location",
+        "ctrip-wumizhou-2023",
+        "smzdm-xiaoxiao-2018"
+      ]
     }
   ],
   "days": [
@@ -599,6 +943,4 @@ const trip={
     }
   ],
   "revision": "late-start-real-map"
-};
-if(typeof module==='object'&&module.exports)module.exports=trip;else root.TRIP=trip;
-})(typeof globalThis!=='undefined'?globalThis:this);
+};if(typeof module==='object'&&module.exports)module.exports=data;else root.TRIP=data;})(typeof globalThis!=='undefined'?globalThis:this);
