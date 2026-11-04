@@ -1,0 +1,10 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');const trip=require('../data.js');
+test('真实地图按WGS84创建地标，切换周日后聚焦对应片区',()=>{
+ const state={tiles:[],markers:[],view:null,fitOptions:null},elements={mapStatus:{textContent:''},mapReset:{addEventListener(){}}};
+ const map={attributionControl:{setPrefix(){}},createPane(){},getPane(){return{style:{}}},on(){},hasLayer(){return true},removeLayer(){},fitBounds(points,options){state.view=points;state.fitOptions=options},setView(point){state.view=point},invalidateSize(){}};
+ const L={map:()=>map,tileLayer:(url,options)=>{state.tiles.push({url,options});return{addTo(){return this},on(){return this}}},divIcon:options=>options,marker:(coords,options)=>{const marker={coords,options,addTo(){return this},on(){return this},getElement(){return{classList:{toggle(){}},focus(){}}}};state.markers.push(marker);return marker;},control:{layers:()=>({addTo(){}}),scale:()=>({addTo(){}})}};
+ const window={L,innerWidth:390},document={getElementById:id=>elements[id],dispatchEvent(){}};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../map.js'),'utf8'),{window,L,document,CustomEvent:function(){}});
+ window.GuideMap.init(trip);assert.equal(state.markers.length,7);for(const marker of state.markers)assert.ok(trip.places.some(place=>place.coords?.[0]===marker.coords[0]&&place.coords?.[1]===marker.coords[1]));assert.ok(state.tiles.some(layer=>layer.url.includes('World_Imagery')));assert.ok(state.tiles.some(layer=>layer.url.startsWith('https://tile.openstreetmap.org/')&&layer.options.attribution.includes('OpenStreetMap')));
+ assert.equal(state.view.length,3,'手机默认只展示3个主要老城点，栈道通过详情单独定位');assert.ok(state.fitOptions.padding[0]<=24,'窄屏减少留白以避免被迫缩小');for(const marker of state.markers)assert.ok(marker.options.icon.iconSize[0]<=44,'手机地标命中框不能大于相邻点间距');
+ window.GuideMap.setDay('sun','rain');assert.deepEqual(state.view,trip.places.find(p=>p.id==='museum').coords);window.GuideMap.setDay('sun','ronggui');assert.deepEqual(state.view,trip.places.find(p=>p.id==='ronggui').coords);
+});

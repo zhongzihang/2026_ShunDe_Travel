@@ -1,0 +1,29 @@
+{
+  "mapName": "Layers",
+  "description": "<DIV STYLE=\"text-align:Left;font-size:12pt\"><P><SPAN>This map presents country boundaries, first order (State/Province) internal administrative boundaries for most countries, second order administrative boundaries for the United States (counties) and some countries in Europe, and place names for the world. The map was developed by Esri using administrative and cities data from Esri; Garmin basemap layers for the world; HERE data for North America, Europe, Australia, New Zealand, South America and Central America, Africa, India, and most of the Middle East; OpenStreetMap data for some features in select African countries; and feature names from the GIS user community. This map is designed for use with maps with darker backgrounds, such as World Imagery. For more information on this map, including the terms of use, visit us online at https://goto.arcgisonline.com/maps/Reference/World_Boundaries_and_Places</SPAN></P></DIV>",
+  "copyrightText": "Esri, HERE, Garmin, (c) OpenStreetMap contributors, and the GIS user community",
+  "fullExtent": {
+    "xmin": -20037507.067161843,
+    "ymin": -19990709.43504232,
+    "xmax": 20037507.067161843,
+    "ymax": 20034863.616507012,
+    "spatialReference": {
+      "cs": "pcs",
+      "wkid": 102100
+    }
+  },
+  "spatialReference": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+  }
+}

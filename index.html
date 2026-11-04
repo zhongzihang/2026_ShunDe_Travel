@@ -4,20 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#264b40">
-  <meta name="description" content="2026年11月6–8日，从深圳北出发的两人顺德周末攻略。含清晖园、大良老城、顺峰山、交通换乘、性价比住宿、美食、地图和预算。">
+  <meta name="description" content="2026年11月6–8日，从深圳北出发的两人顺德周末攻略。含清晖园、大良老城、顺峰山、实景地图、小红书笔记和性价比住宿；周末10点出发。">
   <meta property="og:title" content="去顺德，过一个有滋有味的周末。">
   <meta property="og:description" content="11.06—11.08 · 深圳北出发 · 两人两晚 · 大良老城慢慢逛吃">
   <title>去顺德，过一个有滋有味的周末。｜11.6—11.8</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="data.js" defer></script><script src="core.js" defer></script><script src="app.js" defer></script>
+  <link rel="stylesheet" href="revision.css">
+  <script src="assets/vendor/leaflet/leaflet.js" defer></script>
+  <script src="data.js" defer></script><script src="core.js" defer></script><script src="map.js" defer></script><script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#itinerary">跳到每日行程</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#top"><span class="brand-seal" aria-hidden="true">順</span><span>SHUNDE<span class="brand-sub">周末出走计划 / 2026</span></span></a>
-      <nav aria-label="主要章节"><a href="#route">路线地图</a><a href="#itinerary">每日行程</a><a href="#food">寻味顺德</a><a href="#stay">住与行</a></nav>
+      <nav aria-label="主要章节"><a href="#route">路线地图</a><a href="#itinerary">每日行程</a><a href="#food">寻味顺德</a><a href="#stay">住宿</a></nav>
       <button class="button small outline" data-action="download">↓ 存下行程</button>
     </div>
   </header>
@@ -28,8 +31,8 @@
         <p class="date-label">2026.11.06 FRI — 11.08 SUN</p>
         <h1 id="page-title">去<span class="serif accent">顺德</span>，<br>过一个<br><span class="serif">有滋有味的周末。</span></h1>
         <p class="hero-description">周五下班出发，周六钻进园林与奶香小巷，<br class="desktop-break">周日在湖边慢慢走。两个人，吃好，也歇好。</p>
-        <div class="hero-actions"><a class="button primary" href="#itinerary">翻开三日行程 <span>↗</span></a><a class="text-link" href="#transport">从深圳北怎么去 →</a></div>
-        <div class="hero-meta"><span><b>2</b> 人同行</span><span><b>2</b> 晚老城</span><span>高铁 + 地铁 + 步行</span></div>
+        <div class="hero-actions"><a class="button primary" href="#itinerary">翻开三日行程 <span>↗</span></a><a class="text-link" href="#xhs">小红书做过的功课 →</a></div>
+        <div class="hero-meta"><span><b>2</b> 人同行</span><span><b>2</b> 晚老城</span><span>周末 <b>10:00</b> 出发</span></div>
       </div>
       <figure class="hero-photo">
         <img src="assets/qinghui-detail.webp" alt="清晖园庭院、瓦檐与绿树实拍" width="1200" height="900" fetchpriority="high">
@@ -43,42 +46,24 @@
     <section class="quick-summary wrap" aria-label="行程一眼看懂">
       <div><span class="summary-number">01</span><p><strong>住大良，不换酒店</strong><span>钟楼—清晖园附近，步行省心</span></p></div>
       <div><span class="summary-number">02</span><p><strong>周六园林，周日湖边</strong><span>一天一片，不跨区赶打卡</span></p></div>
-      <div><span class="summary-number">03</span><p><strong>两人约 ¥1,400–2,100</strong><span>规划预算，含两晚住宿与往返</span></p></div>
+      <div><span class="summary-number">03</span><p><strong>睡饱，10点再出门</strong><span>自选交通，周末慢慢开始</span></p></div>
     </section>
 
     <section id="route" class="section wrap">
       <div class="section-heading"><div><p class="eyebrow">01 / FIND YOUR WAY</p><h2>这一趟，<span class="serif">这样走。</span></h2></div><p>大良是落脚点。园林、老街和好吃的，都围着它展开。</p></div>
       <div class="route-layout">
         <div class="route-map-card">
-          <div class="map-topline"><span>顺德周末 · 游玩方位图</span><span class="map-badge">示意 / 非导航地图</span></div>
-          <div class="map-canvas" id="mapCanvas">
-            <svg viewBox="0 0 760 560" class="map-art" aria-hidden="true">
-              <defs>
-                <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#d5d2bf" stroke-width=".6" opacity=".45"/></pattern>
-                <symbol id="garden" viewBox="0 0 100 90"><path d="M15 75V42H85V75" fill="#ede3cb" stroke="#486454" stroke-width="2"/><path d="M7 43Q25 40 27 28H73Q76 40 93 43Z" fill="#4f6a53"/><path d="M18 30Q37 30 40 17H60Q63 30 82 30Z" fill="#57715b"/><path d="M43 75V52H57V75M25 53H35V64H25ZM66 53H76V64H66Z" fill="#c4a271" stroke="#486454"/><path d="M9 77H91" stroke="#486454" stroke-width="2"/></symbol>
-                <symbol id="trees" viewBox="0 0 80 90"><path d="M25 85V55M57 85V45" stroke="#776b49" stroke-width="3"/><path d="M8 59Q-2 38 15 27Q8 6 29 5Q49 2 47 29Q62 48 40 60Z" fill="#8ca087"/><path d="M40 50Q31 28 47 19Q44 1 62 1Q81 4 72 26Q89 48 70 58Z" fill="#6f8c71"/></symbol>
-                <symbol id="houses" viewBox="0 0 120 80"><path d="M10 75V30H110V75" fill="#eedcbd" stroke="#917c5b" stroke-width="2"/><path d="M4 31L29 14L55 31L82 14L116 31" fill="#c08c69" stroke="#917c5b" stroke-width="2"/><path d="M19 75V49Q29 32 39 49V75M49 75V49Q59 32 69 49V75M79 75V49Q89 32 99 49V75" fill="#faf5e8" stroke="#917c5b" stroke-width="2"/></symbol>
-              </defs>
-              <rect width="760" height="560" fill="#f4f1e5"/><rect width="760" height="560" fill="url(#grid)"/>
-              <path d="M-20 429C150 354 182 502 345 420S575 403 790 465" fill="none" stroke="#c9dedb" stroke-width="42"/><path d="M-20 429C150 354 182 502 345 420S575 403 790 465" fill="none" stroke="#e7f0e8" stroke-width="2" stroke-dasharray="9 10"/>
-              <ellipse cx="286" cy="239" rx="179" ry="133" fill="#e6e8d4" opacity=".75"/><ellipse cx="598" cy="305" rx="109" ry="95" fill="#dde4cd"/>
-              <path d="M450 0L400 92L335 147L328 337" fill="none" stroke="#cbbda2" stroke-width="5" stroke-dasharray="7 8"/>
-              <path d="M354 276Q318 260 278 244T173 175" id="mapRoute" fill="none" stroke="#b65e43" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 8"/>
-              <use href="#garden" x="355" y="176" width="98" height="88"/><use href="#houses" x="176" y="260" width="109" height="73"/><use href="#trees" x="562" y="219" width="65" height="74"/><use href="#trees" x="635" y="247" width="45" height="54"/>
-              <path d="M551 328Q584 305 634 324Q680 355 644 377Q605 397 566 368Q542 350 551 328" fill="#bdd7cd"/>
-              <text x="139" y="115" class="map-region">大 良 老 城</text><text x="564" y="199" class="map-region">湖 边 慢 走</text><text x="92" y="433" fill="#668d8b" font-size="13" transform="rotate(8 92 433)">德胜河 · 水系仅作方位示意</text>
-              <path d="M698 71V31M687 46L698 31L709 46" fill="none" stroke="#647464" stroke-width="2"/><text x="692" y="23" fill="#647464" font-size="12">N</text>
-            </svg>
-            <div id="mapPins"></div>
-            <div class="map-home">⌂ 住这里<br><strong>大良钟楼附近</strong></div>
-          </div>
-          <p class="map-footnote">点地标看详情与导航。连线表示推荐顺序，位置、距离和水系均为示意。</p>
+          <div class="map-topline"><span>顺德周末 · 实景游玩导览</span><span class="map-badge">卫星实景 / 街道地图</span></div>
+          <div class="map-canvas real-map" id="realMap" role="region" aria-label="顺德真实地理导览图，可缩放并切换卫星和街道底图"></div>
+          <div class="map-tools"><span id="mapStatus" aria-live="polite">卫星影像为历史实景；点击地标，在本站看实拍与详情。</span><button id="mapReset" type="button">回到当日范围</button></div>
+          <div id="mapStops" class="map-stops" aria-label="当日推荐地点"></div>
+          <p class="map-footnote">地标按真实经纬度放置，部分为地点中心或照片位置；不代表精确入口。本站不提供外部导航跳转。</p>
         </div>
         <aside class="route-note">
           <p class="eyebrow">THE WEEKEND ROUTE</p><h3>让路程短一点，<br>把周末过长一点。</h3>
-          <div class="mini-route"><span>周五 / 抵达</span><strong>深圳北 → 广州南<br>→ 大良钟楼 · 入住</strong></div>
+          <div class="mini-route"><span>周五 / 抵达</span><strong>深圳北出发<br>→ 大良老城 · 入住</strong></div>
           <div class="mini-route"><span>周六 / 老城</span><strong>清晖园 → 华盖路<br>→ 金榜上街 · 顺德菜</strong></div>
-          <div class="mini-route"><span>周日 / 留白</span><strong>顺峰山 → 午饭取行李<br>→ 广州南 → 深圳北</strong></div>
+          <div class="mini-route"><span>周日 / 留白</span><strong>顺峰山 → 午饭取行李<br>→ 按自选交通返深</strong></div>
           <p class="route-reason">顺德属于佛山，祖庙在禅城。这次先把顺德玩舒服；想去容桂，就用它替换周日公园。</p>
           <a class="text-link" href="#alternatives">看看周日的替换方案 ↗</a>
         </aside>
@@ -87,15 +72,15 @@
 
     <section id="itinerary" class="section itinerary-section">
       <div class="wrap">
-        <div class="section-heading"><div><p class="eyebrow">02 / THREE LITTLE CHAPTERS</p><h2>三天两晚，<span class="serif">不用赶。</span></h2></div><p>建议时间可以挪动。美食排队长，就换一家；走累了，就回酒店。</p></div>
+        <div class="section-heading"><div><p class="eyebrow">02 / THREE LITTLE CHAPTERS</p><h2>三天两晚，<span class="serif">不用赶。</span></h2></div><p>周六、周日都从10:00开始。美食排队长，就换一家；走累了，就回酒店。</p></div>
         <div class="day-tabs" role="tablist" aria-label="选择旅行日期" id="dayTabs"></div>
         <div id="dayPanels"></div>
         <div id="alternatives" class="alternative-panel">
-          <div><p class="eyebrow">SUNDAY, YOUR WAY</p><h3>周日上午，三选一。</h3><p>选择后同步更新周日行程、地图和导出内容。</p></div>
+          <div><p class="eyebrow">SUNDAY, YOUR WAY</p><h3>周日上午，三选一。</h3><p>三种方案都10点出发，选择后同步更新行程、实景图和导出。</p></div>
           <div class="alternative-options" role="group" aria-label="周日游玩方案">
-            <button data-variant="park" aria-pressed="true"><span>01 / 默认推荐</span><strong>顺峰山散步</strong><small>最近、轻松，15:00前取行李</small></button>
-            <button data-variant="rain" aria-pressed="false"><span>02 / 天气不好</span><strong>顺德博物馆</strong><small>室内参观，带身份证</small></button>
-            <button data-variant="ronggui" aria-pressed="false"><span>03 / 更爱江边</span><strong>容桂渔人码头</strong><small>09:00出发，13:30开始回老城</small></button>
+            <button data-variant="park" aria-pressed="true"><span>01 / 默认推荐</span><strong>顺峰山散步</strong><small>10:00出发，午饭后取行李</small></button>
+            <button data-variant="rain" aria-pressed="false"><span>02 / 天气不好</span><strong>顺德博物馆</strong><small>10:00出发，带身份证</small></button>
+            <button data-variant="ronggui" aria-pressed="false"><span>03 / 更爱江边</span><strong>容桂渔人码头</strong><small>10:00出发，13:30开始回老城</small></button>
           </div>
           <p class="alternative-message" id="alternativeMessage" aria-live="polite"></p>
         </div>
@@ -109,39 +94,32 @@
 
     <section id="food" class="section food-section"><div class="wrap">
       <div class="section-heading"><div><p class="eyebrow">04 / ALWAYS ROOM FOR ONE MORE BITE</p><h2>把胃口，<span class="serif">留给顺德。</span></h2></div><p>两个人点小份，正餐留余地。这里按顺路安排，不编造评分榜。</p></div>
-      <div class="food-toolbar"><div class="filter-group" id="foodFilters" role="group" aria-label="筛选美食类别"></div><span class="food-disclaimer">金额为点单预算 · 未核实实时菜单价</span></div>
+      <div class="food-toolbar"><div class="filter-group" id="foodFilters" role="group" aria-label="筛选美食类别"></div><span class="food-disclaimer">两人点单参考 · 菜单以现场为准</span></div>
       <div id="foodGrid" class="food-grid"></div>
-      <p class="section-note">餐饮图案为菜式示意插画。品牌只作查店候选；营业时间、等位、分店和菜单请出发前确认。</p>
+      <p class="section-note">图片仅使用对应菜品的真实实拍。小红书给出查店线索，营业时间、等位、分店与菜单请出发前确认。</p>
     </div></section>
 
     <section id="stay" class="section wrap">
       <div class="section-heading"><div><p class="eyebrow">05 / MAKE YOURSELF AT HOME</p><h2>住得顺路，<span class="serif">就很划算。</span></h2></div><p>11月6日入住 → 11月8日退房 · 1间房 / 2成人 / 连住2晚</p></div>
-      <div class="stay-strategy"><div class="stay-price"><span>建议筛选预算 / 每房每晚</span><strong>¥200<span>—</span>350</strong><small>两晚 ¥400–700 · 目标价，非实时报价</small></div><div><h3>先在大良钟楼站周边找，再比较两晚总价。</h3><p>优先地图步行约10分钟内、有外窗、近期卫生与隔音评价稳定、可取消的房型。愿意多走一点时，再放宽到15分钟。酒店不必含早，把早茶留给街坊店。</p><p class="stay-caution">“清晖园店”可能距景区几公里，订前核对准确位置；周五晚到，提前联系前台保留房间。</p></div></div>
+      <div class="stay-strategy"><div class="stay-area"><span>首选落脚范围</span><strong>大良钟楼站</strong><small>清晖园周边 · 步行约10分钟内</small></div><div><h3>先在大良钟楼站周边找，再比较两晚总价。</h3><p>优先地图步行约10分钟内、有外窗、近期卫生与隔音评价稳定、可取消的房型。愿意多走一点时，再放宽到15分钟。酒店不必含早，把早茶留给街坊店。</p><p class="stay-caution">“清晖园店”可能距景区几公里，订前核对准确位置；周五晚到，提前联系前台保留房间。</p></div></div>
       <div id="hotelGrid" class="hotel-grid"></div>
       <p class="section-note">已核对门店与位置线索，尚未取得 11/6–11/8 的实时房价、房态与取消条款。比较时统一为两晚、同类床型、同等可退条件。</p>
     </section>
 
-    <section id="transport" class="section transport-section"><div class="wrap">
-      <div class="section-heading"><div><p class="eyebrow">06 / GETTING THERE & BACK</p><h2>从深圳北，<span class="serif">到老城门口。</span></h2></div><a class="button outline" href="https://www.12306.cn/" target="_blank" rel="noopener noreferrer">打开 12306 ↗</a></div>
-      <div class="rail-route" aria-label="推荐去程换乘顺序"><div><b>01</b><strong>深圳北</strong><span>高铁到广州南</span></div><span class="rail-arrow">→</span><div><b>02</b><strong>广州南</strong><span>地铁7号线 · 美的大道方向</span></div><span class="rail-arrow">→</span><div><b>03</b><strong>北滘公园</strong><span>换佛山3号线 · 顺德学院站方向</span></div><span class="rail-arrow">→</span><div><b>04</b><strong>大良钟楼</strong><span>步行至酒店 / 清晖园</span></div></div>
-      <div class="transport-cards"><article><span class="card-label">周五 / 去程</span><h3>争取 19:00–20:00 发车</h3><p>深圳北提前45–60分钟到站。广州南出站另留15–25分钟；地铁纯运行查询约45分钟、6元，候车和步行一起按60–80分钟预留。</p><p>目标21:00–22:00入住。若21:00后才从深圳北出发，先看整段地铁能否衔接；接近末班就比较广州南打车到酒店的实时价格。</p></article><article><span class="card-label">周日 / 返程</span><h3>建议 17:00–18:30 广州南发车</h3><p>15:00前回酒店取行李，最晚15:30离开大良。地铁3号线往佛山大学方向，到北滘公园换7号线往燕山方向，在广州南下车。</p><p>从大良出发到广州南列车发车，至少预留90分钟；有大件行李或不熟悉车站，再多留30分钟。</p></article><article><span class="card-label">站名 / 容易混淆</span><h3>大良钟楼 ≠ 顺德站</h3><p>大良钟楼是佛山地铁3号线站，贴合老城。顺德站、顺德学院站、容桂站是广珠城际铁路站，不是同一个站，也不能互相替代。</p><p>广州南转广珠城际可以作为备选，但必须先查停站与接续；周五晚不按“到了就有车”来规划。</p></article></div>
-      <div id="trainCandidates" class="train-candidates"></div>
-      <p class="section-note">列车时刻与余票会变化，建议窗口不代表车票已买。地铁线路按当前常规服务核对，出发当日再看运营公告；不依赖末班换乘。</p>
+    <section id="xhs" class="section social-section"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">06 / NOTES FROM XIAOHONGSHU</p><h2>做过功课，<span class="serif">再慢慢逛。</span></h2></div><p>读了正文，再挑适合这次的建议。个人口味与路线整理，分别注明。</p></div>
+      <div id="socialNotes" class="social-grid"></div>
+      <p class="section-note">核对于2026年11月4日。保留作者、发布日期与原文入口；游记里的排队、口味和拍照偏好仅作参考，开放和票务以官方信息为准。</p>
     </div></section>
 
-    <section id="budget" class="section wrap budget-section">
-      <div class="section-heading"><div><p class="eyebrow">07 / A WEEKEND THAT ADDS UP</p><h2>钱花在哪，<span class="serif">一眼明白。</span></h2></div><p>两人总预算约 ¥1,400–2,100。以下可按实际价格重算。</p></div>
-      <div class="budget-layout"><div class="budget-controls"><label for="hotelBudget"><span>酒店 / 每晚每间</span><strong id="hotelValue">¥260</strong></label><input id="hotelBudget" type="range" min="150" max="600" step="10" value="260"><label for="foodBudget"><span>吃喝 / 全程每人</span><strong id="foodValue">¥325</strong></label><input id="foodBudget" type="range" min="200" max="600" step="25" value="325"><div class="budget-input-row"><label for="railBudget">往返高铁 / 每人 <input id="railBudget" type="number" min="0" max="1000" step="1" value="149"></label><label for="localBudget">本地交通 / 两人合计 <input id="localBudget" type="number" min="0" max="2000" step="10" value="160"></label></div><p>按2人2晚计算；清晖园常规成人票共¥30。高铁149元/人按本次二等座往返核价，其余为规划金额；未含购物、付费游乐项目和额外住宿。</p></div><div class="budget-total"><span>两个人，这个周末</span><output id="totalBudget" for="hotelBudget foodBudget railBudget localBudget">¥1,658</output><p id="perPersonBudget">约 ¥829 / 人</p><div id="budgetBreakdown" class="budget-breakdown"></div></div></div>
-    </section>
+    <section id="checklist" class="section checklist-section"><div class="wrap checklist-layout"><div><p class="eyebrow">07 / BEFORE YOU GO</p><h2>出发前，<span class="serif">再看一眼。</span></h2><p>勾选记录保存在当前浏览器，换设备需要重新勾选。</p><div class="check-progress" id="checkProgress" aria-live="polite">0 / 6 已准备</div><a class="text-link" href="https://www.weather.com.cn/weather/101280800.shtml" target="_blank" rel="noopener noreferrer">出发前看佛山天气 ↗</a><p class="weather-note">未填报未经核实的11/6–11/8逐日天气；晴天选湖边，下雨选室内。</p></div><div id="checklistItems" class="checklist-items"></div></div></section>
 
-    <section id="checklist" class="section checklist-section"><div class="wrap checklist-layout"><div><p class="eyebrow">08 / BEFORE YOU GO</p><h2>出发前，<span class="serif">再看一眼。</span></h2><p>勾选记录保存在当前浏览器，换设备需要重新勾选。</p><div class="check-progress" id="checkProgress" aria-live="polite">0 / 6 已准备</div><a class="text-link" href="https://www.weather.com.cn/weather/101280800.shtml" target="_blank" rel="noopener noreferrer">出发前看佛山天气 ↗</a><p class="weather-note">未填报未经核实的11/6–11/8逐日天气；晴天选湖边，下雨选室内。</p></div><div id="checklistItems" class="checklist-items"></div></div></section>
-
-    <section class="section wrap sources-section" id="sources"><details><summary><span><span class="eyebrow">SOURCES & FIELD NOTES</span><strong>查证来源与图片署名</strong></span><span class="source-date">核对于 2026.11.04 ＋</span></summary><p>开放、票务、交通以官方信息优先；酒店与餐饮未取得指定日期实时报价。步行、打车耗时和消费区间均为规划估算。实拍为历史照片，不代表出发日景观、天气或人流。</p><div id="sourceList" class="source-list"></div><div class="photo-credits"><h3>摄影与图像</h3><p>清晖园两张实拍：EditQ，CC BY-SA 4.0；顺峰山牌坊：Nissangeniss，CC BY-SA 4.0。图片经等比例压缩，页面展示可能裁切；地图和餐饮图案为本站示意插画。</p><p><a href="https://commons.wikimedia.org/wiki/File:Qinghui_Garden_4.jpg" target="_blank" rel="noopener noreferrer">清晖园园景原图 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:Qinghui_Garden_10.jpg" target="_blank" rel="noopener noreferrer">清晖园庭院原图 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:Shunfengshan_Park_Main_Gate_202006.jpg" target="_blank" rel="noopener noreferrer">顺峰山牌坊原图 ↗</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0 许可 ↗</a></p></div></details></section>
+    <section class="section wrap sources-section" id="sources"><details><summary><span><span class="eyebrow">SOURCES & FIELD NOTES</span><strong>查证来源与图片署名</strong></span><span class="source-date">核对于 2026.11.04 ＋</span></summary><p>开放、票务、交通以官方信息优先；酒店与餐饮未取得指定日期实时报价。步行、打车耗时和点单参考为规划估算。实拍与卫星影像均可能为历史记录，不代表出发日景观、天气或人流。</p><div id="sourceList" class="source-list"></div><div class="photo-credits"><h3>摄影与图像</h3><p>清晖园两张实拍：EditQ，CC BY-SA 4.0；顺峰山牌坊：Nissangeniss，CC BY-SA 4.0。华盖路街景与民信双皮奶实拍：Lau Hau Yatyue Tiger，CC0，2024年1月拍摄。图片等比例压缩，页面展示可能裁切；导览图使用Esri卫星影像与OpenStreetMap街道底图，来源署名保留在地图内。</p><p><a href="https://commons.wikimedia.org/wiki/File:Qinghui_Garden_4.jpg" target="_blank" rel="noopener noreferrer">清晖园园景原图 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:Qinghui_Garden_10.jpg" target="_blank" rel="noopener noreferrer">清晖园庭院原图 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:Shunfengshan_Park_Main_Gate_202006.jpg" target="_blank" rel="noopener noreferrer">顺峰山牌坊原图 ↗</a> · <a href="https://commons.wikimedia.org/w/index.php?curid=144488455" target="_blank" rel="noopener noreferrer">华盖路实拍 ↗</a> · <a href="https://commons.wikimedia.org/w/index.php?curid=144487212" target="_blank" rel="noopener noreferrer">双皮奶实拍 ↗</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0 许可 ↗</a></p></div></details></section>
   </main>
   <footer class="site-footer"><div class="wrap footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-seal">順</span><span>好好吃，慢慢逛。<span class="brand-sub">SHUNDE / NOVEMBER 2026</span></span></a><p>愿这个周末，走得舒服，也吃得满足。</p><div><button class="text-link" data-action="download">下载文字行程 ↓</button><button class="text-link" data-action="print">打印 / 存为 PDF ↗</button><a class="text-link" href="https://github.com/zhongzihang/2026_ShunDe_Travel" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
   <nav class="mobile-nav" aria-label="手机快捷导航"><a href="#route">⌖<span>地图</span></a><a href="#itinerary">☷<span>行程</span></a><a href="#food">♧<span>美食</span></a><a href="#stay">⌂<span>住宿</span></a><button data-action="download">↓<span>存下</span></button></nav>
   <dialog id="placeDialog" aria-labelledby="dialogTitle"><div class="dialog-top"><span>SHUNDE / PLACE NOTES</span><button id="dialogClose" aria-label="关闭景点详情">关闭 ×</button></div><div id="dialogContent"></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <noscript><div class="wrap"><h2>三日行程</h2><p>11月6日晚：深圳北→广州南→地铁7号线→北滘公园→3号线→大良钟楼。11月7日：清晖园→华盖路→金榜街。11月8日：顺峰山→取行李→广州南→深圳北。请启用JavaScript查看地图、预算与详细行程。</p></div></noscript>
+  <noscript><div class="wrap"><h2>三日行程</h2><p>11月6日晚按自选交通抵达入住。11月7日10:00出门，清晖园→华盖路→金榜街。11月8日10:00出门，顺峰山或博物馆或容桂三选一，午饭后取行李，按自选交通返深。请启用JavaScript查看实景地图和详细行程。</p></div></noscript>
 </body>
 </html>

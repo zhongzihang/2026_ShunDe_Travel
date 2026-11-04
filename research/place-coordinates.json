@@ -1,0 +1,79 @@
+[
+  {
+    "id": "qinghui",
+    "name": "清晖园",
+    "coordinates": [
+      22.83838749,
+      113.2501924
+    ],
+    "datum": "WGS84",
+    "source": "https://zh.wikipedia.org/wiki/清晖园",
+    "note": "地点坐标，入园仍按现场入口"
+  },
+  {
+    "id": "huagai",
+    "name": "华盖路步行街",
+    "coordinates": [
+      22.838035,
+      113.247642
+    ],
+    "datum": "WGS84",
+    "source": "https://commons.wikimedia.org/w/index.php?curid=144488455",
+    "note": "华盖路实拍位置，不代表街道入口"
+  },
+  {
+    "id": "jinbang",
+    "name": "金榜上街",
+    "coordinates": [
+      22.8402481,
+      113.2425951
+    ],
+    "datum": "WGS84",
+    "source": "https://nominatim.openstreetmap.org/search?q=%E9%87%91%E6%A6%9C%E4%B8%8A%E8%A1%97+%E9%A1%BA%E5%BE%B7&format=jsonv2&limit=2&countrycodes=cn",
+    "note": "公开地点中心点，非精确出入口"
+  },
+  {
+    "id": "huagaishan",
+    "name": "华盖山栈道",
+    "coordinates": [
+      22.83836,
+      113.2458759
+    ],
+    "datum": "WGS84",
+    "source": "https://nominatim.openstreetmap.org/search?q=%E5%8D%8E%E7%9B%96%E5%B1%B1+%E9%A1%BA%E5%BE%B7&format=jsonv2&limit=2&countrycodes=cn",
+    "note": "公开地点中心点，非精确出入口"
+  },
+  {
+    "id": "shunfeng",
+    "name": "顺峰山公园",
+    "coordinates": [
+      22.82623,
+      113.27769
+    ],
+    "datum": "WGS84",
+    "source": "https://zh.wikipedia.org/wiki/顺峰山公园",
+    "note": "公园地点中心点，游玩从北门一侧展开"
+  },
+  {
+    "id": "museum",
+    "name": "顺德博物馆",
+    "coordinates": [
+      22.8017452,
+      113.2883393
+    ],
+    "datum": "WGS84",
+    "source": "https://nominatim.openstreetmap.org/search?q=%E9%A1%BA%E5%BE%B7%E5%8D%9A%E7%89%A9%E9%A6%86&format=jsonv2&limit=2&countrycodes=cn",
+    "note": "公开地点中心点，非精确出入口"
+  },
+  {
+    "id": "ronggui",
+    "name": "容桂渔人码头",
+    "coordinates": [
+      22.7828078,
+      113.2654468
+    ],
+    "datum": "WGS84",
+    "source": "https://nominatim.openstreetmap.org/search?q=%E6%B8%94%E4%BA%BA%E7%A0%81%E5%A4%B4+%E5%AE%B9%E6%A1%82&format=jsonv2&limit=2&countrycodes=cn",
+    "note": "公开地点中心点，非精确出入口"
+  }
+]
